@@ -1,70 +1,85 @@
 #include <iostream>
+#include <string>
+#include <vector>
 
  //using namespace ctch1330;
 using namespace std;
 
-double apples;
-double oranges;
-double cherries;
-double watermelons;
-double wallet = 100;
-float userchoice;
-
-
-
 
 int main()
 {
-	while (wallet >= 0)
+	char choice;
+	int ItemsBought;
+	double orange = .75;
+	double apple = .25;
+	double cherry = 1.00;
+	double watermelon = 2.00;
+	double banana = .85;
+	double pear = .85;
+	double almondmilk = 4.00;
+	double oatmilk = 3.50;
+	double soymilk = 4.00;
+	double twopmilk = 3.00;
+	double goatmilk = 6.00;
+	double chocomilk = 5.00;
+	double frostedflake = 3.00;
+	double pbcrunch = 3.50;
+	double lifecereal = 4.00;
+	double ctcrunch = 3.50;
+	double luckycharm = 3.50;
+	double eggs = 1.25;
+	double pastureeggs = 3.00;
+	double cheese = 2.00;
+	double turkey = 4.50;
+	double ham = 4.00;
+	double bacon = 3.00;
+	
+	cout << "Welcome to the Farmer's Market!"<<endl;
+	cout << "--------------------------------------"<<endl;
+	cout << "What are you looking to purchase today?"<<endl;
+	//cout << endl;
+	cin >> ItemsBought;
+	shoppingcart sc1;
+	for (int i=0; i < ItemsBought; i++)
 	{
-		cout << "\n\n Welcome to the Farmer's Market!\n\n";
-		cout << "Menu:\n\n";
-		cout << "1     Apples          $2\n";
-		cout << "2     Oranges         $3\n";
-		cout << "3     Cherries        $4\n";
-		cout << "4     Watermelons     $5\n\n";
-		cout << "You have\n " << apples << "Apples\n " << oranges << "Oranges\n " << cherries << "Cherries\n " << watermelons << "Watermelons\n\n";
-		cout << "You have $" << wallet << " left in your wallet.\n\n";
-		cout << "Type in the number representing the type of fruit you want or type 5 to check out:";
-		cin >> userchoice;
-
-		if (userchoice == 1)
+		cout << "Menu:"<<endl;
+		cout << "--------------------------------------"<<endl;
+		cout << "A. Produce"<<endl;
+		cout << "B. Non-Dairy"<<endl;
+		cout << "C. Dairy"<<endl;
+		cout << "D. Cereal"<<endl;
+		cout << "E. Animal Products"<<endl;
+		cout << "Please select the type of items you want to add to your cart"<<endl;
+		cin >> choice;
+		cout << endl;
+		switch (choice)
 		{
-			apples++;
-			wallet = wallet - 2;
+			case 'a':
+			cout << "Menu:"<<endl;
+			cout << "--------------------------------------"<<endl;
+			cout << "1.Oranges -$ "<<orange<<endl;
+			cout << "2.Apples -$ "<<apple<<endl;
+			cout << "4.Watermelon -$ "<<watermelon<<endl;
+			cout << "5.Bananas -$ "<<banana<<endl;
+			cout << "6.Pears -$ "<<pear<<endl;
+			cout << endl;
+			cout << "Type the number that corresponds to the produce you would like to add to your cart"<<endl;
+			
+
+
+
 		}
 
-		if (userchoice == 2)
-		{
-			oranges++;
-			wallet = wallet - 3;
-		}
 
-		if (userchoice == 3)
-		{
-			cherries++;
-			wallet = wallet - 4;
-		}
 
-		if (userchoice == 4)
-		{
-			watermelons++;
-			wallet = wallet - 5;
-		}
-
-		if (userchoice == 5)
-		{
-			cout << "\n\n Thank you for shopping at the Farmer's Market! We hope to see you again soon!\n\n";
-			cin.get();
-			return 0;
-		}
 	}
 
 
 
 
 
-	cin.get();
+
+	
 	return 0;
 }
 
