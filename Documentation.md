@@ -5,14 +5,14 @@ This application was built to assist shoppers and provide them with a Usable int
 - Look at the descriptions of the items they want to purchase
 - View the items in their shopping cart
 
-| Screen | Description |
+| Option | Description |
 | -------| ----------- |
-| Main Menu | Gives a brief overview of the rest of the menus, allows for navigation to the rest of the menus |
-| Courses | Faculty can see the courses they are teaching and drill down & reach student roster through this menu |
-| Class Roster | Shows the class roster for each of the classes they are teaching and can manage individual students |
-| Student Management | Faculty is able to see student progress and manage their grades, etc. |
-
-You can learn more about Learning Management Systems and their benefits here: [link](https://wahoolearning.com/blog/learning-management-systems/benefits-customised-lms/) 
+| Add Items | Allows the customer to add whatever number of whatever item that they would like |
+| Remove Items | Allows the customer to remove any items from their cart |
+| Change Item Quantity | Allows the customer to modify the quantity of any given item in their cart |
+| See Item Descriptions| Enables the customer to go and make sure they specified all the right details about the items they want |
+| View Shopping Cart| Allows the customer to see all the items in their cart and the total price of them |
+| Quit | In the case that the customer decides they dont need anything, they are able to quit out of the application |
 
 
 
@@ -54,4 +54,8 @@ classDiagram
     Menu: -View Shopping Cart
     Menu: -Quit
 ```
-This is an example of a more sophisticated LMS Class Diagram: ![Example](https://www.researchgate.net/profile/Dennise-Adrianto/publication/320211937/figure/fig4/AS:545893431431169@1507162544813/Class-Diagram-of-Online-Learning-System.png)
+```
+App Demo
+```
+I created an App Demo on Microsoft Teams and have shared access to the recording with you.
+

@@ -104,8 +104,8 @@ int main()
 		else if (menu == "4")
 		{
 			cout << endl;
-			cout << "View Shopping Cart" <<endl;
-			shoppingcart.printTotal();
+			cout << "View Item Descriptions" <<endl;
+			shoppingcart.printDescriptions();
 			cout << endl;
 			printMenu();
 		}
@@ -113,8 +113,8 @@ int main()
 		else if (menu == "5")
 		{
 			cout << endl;
-			cout << "View Item Descriptions" <<endl;
-			shoppingcart.printDescriptions();
+			cout << "View Shopping Cart" <<endl;
+			shoppingcart.printTotal();
 			cout << endl;
 			printMenu();
 		}
