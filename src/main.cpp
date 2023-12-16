@@ -56,10 +56,12 @@ int main()
 			getline(cin, itemName);
 			cout << "Enter the Item description: " <<endl;
 			getline(cin, itemDescription);
+			cout << "Enter the Item price: " <<endl;
+			cin >> price;
 			cout << "Enter the item quantity: " << endl;
 			cin >> quantity;
 
-			items item(itemName, itemDescription, price, quantity);
+			ItemToPurchase item(itemName, itemDescription, price, quantity);
 			shoppingcart.addItem(item);
 			cout << endl;
 			printMenu();
@@ -91,7 +93,7 @@ int main()
 			cin >> quantity;
 			cin.ignore();
 
-			items item;
+			ItemToPurchase item;
 			item.setName(name);
 			item.setQuantity(quantity);
 			shoppingcart.modifyItem(item);

@@ -1,10 +1,11 @@
+#ifndef items_hpp
 #define items_hpp
 #include <string>
 #include <iostream>
 using namespace std;
 
-class items
-{
+
+class ItemToPurchase{
     private:
             string ItemName;
             double ItemPrice;
@@ -12,8 +13,8 @@ class items
             string Description;
 
     public:
-            items();
-            items(string name, string description, double price, int quantity);
+            ItemToPurchase();
+            ItemToPurchase(string name, string description, double price, int quantity);
             void setName(string name);
             void setPrice(double price);
             void setQuantity(int quantity);
@@ -26,3 +27,4 @@ class items
             void printItemCost();
             void printItemDescription();
 };
+#endif

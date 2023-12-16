@@ -2,65 +2,65 @@
 #include <iostream>
 using namespace std;
 
-items::items(){
+ItemToPurchase::ItemToPurchase(){
     ItemName = "none";
     ItemPrice = 0.0;
     ItemQuant = 0;
     Description = "none";
 }
 
-items::items(string name, string description, double price, int quantity){
+ItemToPurchase::ItemToPurchase(string name, string description, double price, int quantity){
     ItemName = name;
     Description = description;
     ItemPrice = price;
     ItemQuant = quantity;
 }
 
-void items::setDescription(string description)
+void ItemToPurchase::setDescription(string description)
 {
     Description = description;
 }
 
-void items::setName(string name)
+void ItemToPurchase::setName(string name)
 {
     ItemName = name;
 }
 
-void items::setPrice(double price)
+void ItemToPurchase::setPrice(double price)
 {
     ItemPrice = price;
 }
-void items::setQuantity(int quantity)
+void ItemToPurchase::setQuantity(int quantity)
 {
     ItemQuant = quantity;
 }
 
-string items::name()
+string ItemToPurchase::name()
 {
     return ItemName;
 }
 
-double items::price()
+double ItemToPurchase::price()
 {
     return ItemPrice;
 }
 
-int items::quantity()
+int ItemToPurchase::quantity()
 {
     return ItemQuant;
 }
 
-string items::description()
+string ItemToPurchase::description()
 {
     return Description;
 }
 
-void items::printItemCost()
+void ItemToPurchase::printItemCost()
 {
     cout << ItemName << " " << ItemQuant << " - $" << quantity()* price() <<endl;
 }
 
-void items::printItemDescription()
+void ItemToPurchase::printItemDescription()
 {
     cout << ItemName << " | " << Description <<endl;
 }

@@ -26,7 +26,7 @@ string ShoppingCart::date()
     return _currentDate;
 }
 
-void ShoppingCart::addItem(items item)
+void ShoppingCart::addItem(ItemToPurchase item)
 {
     _cartItems.push_back(item);
 }
@@ -36,7 +36,7 @@ void ShoppingCart::removeItem(string name)
     bool found = false;
     for ( unsigned long int i = 0; i < _cartItems.size(); i++)
     {
-        items item = _cartItems.at(i);
+        ItemToPurchase item = _cartItems.at(i);
         if ( name == item.name())
         {
             _cartItems.erase(_cartItems.begin()+1);
@@ -49,12 +49,12 @@ void ShoppingCart::removeItem(string name)
     }
 }
 
-void ShoppingCart::modifyItem(items ip)
+void ShoppingCart::modifyItem(ItemToPurchase ip)
 {
     bool found = false;
     for ( unsigned long int i = 0; i < _cartItems.size(); i++)
     {
-        items item = _cartItems.at(i);
+        ItemToPurchase item = _cartItems.at(i);
         if ( ip.name() == item.name())
         {
             if (ip.quantity() != 0)
@@ -113,7 +113,7 @@ void ShoppingCart::printTotal()
 
     for ( unsigned long int i = 0; i < _cartItems.size(); i++)
     {
-        items item = _cartItems.at(i);
+        ItemToPurchase item = _cartItems.at(i);
         item.printItemCost();
     }
 
@@ -128,7 +128,7 @@ void ShoppingCart::printDescriptions()
     cout << "Item Descriptions:" << endl;
     for ( unsigned long int i = 0; i < _cartItems.size(); i++)
     {
-        items item = _cartItems.at(i);
+        ItemToPurchase item = _cartItems.at(i);
         item.printItemDescription();
     }
 }

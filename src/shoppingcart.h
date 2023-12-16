@@ -1,3 +1,4 @@
+#ifndef ShoppingCart_hpp
 #define ShoppingCart_hpp
 #include <string>
 #include <vector>
@@ -8,7 +9,7 @@ using namespace std;
 class ShoppingCart
 {
     private:
-                vector <items> _cartItems;
+                vector <ItemToPurchase> _cartItems;
                 string _customerName;
                 string _currentDate;
 
@@ -17,11 +18,13 @@ class ShoppingCart
                 ShoppingCart(string custName, string date);
                 string customerName();
                 string date();
-                void addItem(items item);
+                void addItem(ItemToPurchase item);
                 void removeItem(string name);
-                void modifyItem(items item);
+                void modifyItem(ItemToPurchase item);
                 int numItemsInCart();
                 double costOfCart();
                 void printTotal();
                 void printDescriptions();
 };
+
+#endif
