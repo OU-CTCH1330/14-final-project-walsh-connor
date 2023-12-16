@@ -5,17 +5,23 @@
 #include "items.h"
 using namespace std;
 
-class shoppingcart
+class ShoppingCart
 {
     private:
-                vector <items> shopitems;
-                string customerName;
-                string date;
+                vector <items> _cartItems;
+                string _customerName;
+                string _currentDate;
 
     public:
-                shoppingcart();
-                shoppingcart(string customerName);
-                void add(const items& its);
-
-
+                ShoppingCart();
+                ShoppingCart(string custName, string date);
+                string customerName();
+                string date();
+                void addItem(items item);
+                void removeItem(string name);
+                void modifyItem(items item);
+                int numItemsInCart();
+                double costOfCart();
+                void printTotal();
+                void printDescriptions();
 };

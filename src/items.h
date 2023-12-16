@@ -6,22 +6,25 @@ using namespace std;
 class items
 {
     private:
-    
             string ItemName;
-            float ItemPrice;
+            double ItemPrice;
             int ItemQuant;
+            string Description;
 
     public:
 
             items();
 
-            items(string in, float ip, int iq);
+            items(string name, string description, double price, int quantity);
+            void setName(string name);
+            void setPrice(double price);
+            void setQuantity(int quantity);
+            void setDescription(string description);
 
-            void Name(string in);
-            string entername();
-            void CalcPrice(float ip);
-            float enterprice();
-            void CalcQuant(int iq);
-            int enterquant();
-
+            string name();
+            double price();
+            int quantity();
+            string description();
+            void printItemCost();
+            void printItemDescription();
 };
