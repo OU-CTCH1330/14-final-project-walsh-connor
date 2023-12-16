@@ -1,4 +1,4 @@
-#define shoppingcart_hpp
+#define ShoppingCart_hpp
 #include <string>
 #include <vector>
 #include <iostream>

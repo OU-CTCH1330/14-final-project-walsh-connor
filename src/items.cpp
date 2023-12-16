@@ -57,7 +57,7 @@ string items::description()
 
 void items::printItemCost()
 {
-    cout << name << " " << quantity << " - $" << quantity()* price() <<endl;
+    cout << ItemName << " " << ItemQuant << " - $" << quantity()* price() <<endl;
 }
 
 void items::printItemDescription()

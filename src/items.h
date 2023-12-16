@@ -12,9 +12,7 @@ class items
             string Description;
 
     public:
-
             items();
-
             items(string name, string description, double price, int quantity);
             void setName(string name);
             void setPrice(double price);

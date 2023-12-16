@@ -90,4 +90,45 @@ int ShoppingCart::numItemsInCart()
      return q;
 }
 
-double ShoppingCart::cost
+double ShoppingCart::costOfCart()
+{
+    double cost = 0.0;
+    for ( unsigned long int i = 0; i < _cartItems.size(); i++)
+    {
+        cost += _cartItems.at(i).quantity() * _cartItems.at(i).price();
+    }
+
+    return cost;
+}
+
+void ShoppingCart::printTotal()
+{
+    cout << _customerName << "'s Shopping Cart   " << _currentDate << endl;
+    cout << "Number of Items: " << numItemsInCart() << endl;
+    cout << endl;
+    if ( _cartItems.size() == 0)
+    {
+        cout << "Shopping Cart is Empty" << endl;
+    }
+
+    for ( unsigned long int i = 0; i < _cartItems.size(); i++)
+    {
+        items item = _cartItems.at(i);
+        item.printItemCost();
+    }
+
+    cout << endl;
+    cout << "Total: $" << costOfCart() << endl;
+} 
+
+void ShoppingCart::printDescriptions()
+{
+    cout << _customerName << "'s Shopping Cart   " << _currentDate << endl;
+    cout << endl;
+    cout << "Item Descriptions:" << endl;
+    for ( unsigned long int i = 0; i < _cartItems.size(); i++)
+    {
+        items item = _cartItems.at(i);
+        item.printItemDescription();
+    }
+}

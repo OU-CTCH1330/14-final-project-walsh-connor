@@ -1,85 +1,128 @@
 #include <iostream>
 #include <string>
-#include <vector>
+#include "items.h"
+#include "shoppingcart.h"
 
  //using namespace ctch1330;
 using namespace std;
 
+void printMenu()
+{
+	cout << "MENU" << endl;
+	cout << "1.) - Add Items to Cart" << endl;
+	cout << "2.) - Remove Item from Cart" << endl;
+	cout << "3.) - Change Item Quantity" << endl;
+	cout << "4.) - See Item Descriptions" << endl;
+	cout << "5.) - View Shopping Cart" << endl;
+	cout << "6.) - Quit" << endl;
+	cout << endl;
+	cout << "Choose an option:  " << endl;
+}
+
 
 int main()
 {
-	char choice;
-	int ItemsBought;
-	double orange = .75;
-	double apple = .25;
-	double cherry = 1.00;
-	double watermelon = 2.00;
-	double banana = .85;
-	double pear = .85;
-	double almondmilk = 4.00;
-	double oatmilk = 3.50;
-	double soymilk = 4.00;
-	double twopmilk = 3.00;
-	double goatmilk = 6.00;
-	double chocomilk = 5.00;
-	double frostedflake = 3.00;
-	double pbcrunch = 3.50;
-	double lifecereal = 4.00;
-	double ctcrunch = 3.50;
-	double luckycharm = 3.50;
-	double eggs = 1.25;
-	double pastureeggs = 3.00;
-	double cheese = 2.00;
-	double turkey = 4.50;
-	double ham = 4.00;
-	double bacon = 3.00;
+	string customerName;
+	string date;
+	cout << "Enter customer's name: " << endl;
+	getline(cin, customerName);
+	cout << "Enter today's date:  " << endl;
+	getline(cin, date);
+	cout << endl;
+
+	cout << "Customer Name: " << customerName << endl;
+	cout << "Today's date: " << date << endl;
+	cout <<endl;
+
+	ShoppingCart shoppingcart(customerName, date);
+
+	string menu;
 	
-	cout << "Welcome to the Farmer's Market!"<<endl;
-	cout << "--------------------------------------"<<endl;
-	cout << "What are you looking to purchase today?"<<endl;
-	//cout << endl;
-	cin >> ItemsBought;
-	shoppingcart sc1;
-	for (int i=0; i < ItemsBought; i++)
+	printMenu();
+	cin >> menu;
+	while (menu != "6")
 	{
-		cout << "Menu:"<<endl;
-		cout << "--------------------------------------"<<endl;
-		cout << "A. Produce"<<endl;
-		cout << "B. Non-Dairy"<<endl;
-		cout << "C. Dairy"<<endl;
-		cout << "D. Cereal"<<endl;
-		cout << "E. Animal Products"<<endl;
-		cout << "Please select the type of items you want to add to your cart"<<endl;
-		cin >> choice;
-		cout << endl;
-		switch (choice)
+		if (menu == "1")
 		{
-			case 'a':
-			cout << "Menu:"<<endl;
-			cout << "--------------------------------------"<<endl;
-			cout << "1.Oranges -$ "<<orange<<endl;
-			cout << "2.Apples -$ "<<apple<<endl;
-			cout << "4.Watermelon -$ "<<watermelon<<endl;
-			cout << "5.Bananas -$ "<<banana<<endl;
-			cout << "6.Pears -$ "<<pear<<endl;
 			cout << endl;
-			cout << "Type the number that corresponds to the produce you would like to add to your cart"<<endl;
+			string itemName;
+			double price;
+			string itemDescription;
+			int quantity;
 			
+			cout << "Add item to cart" <<endl;
+			cout << "Enter the item name: " << endl;
+			cin.ignore();
+			getline(cin, itemName);
+			cout << "Enter the Item description: " <<endl;
+			getline(cin, itemDescription);
+			cout << "Enter the item quantity: " << endl;
+			cin >> quantity;
 
+			items item(itemName, itemDescription, price, quantity);
+			shoppingcart.addItem(item);
+			cout << endl;
+			printMenu();
+		}
+		
+		else if (menu == "2")
+		{
+			cout << "Remove item from cart" <<endl;
+			cout << "Enter the name of the item you want to remove: " << endl;
+			string name;
+			cin.ignore();
+			getline(cin, name);
 
+			shoppingcart.removeItem(name);
+			cout << endl;
+			printMenu();
+		}
+		
+		else if (menu == "3")
+		{
+			cout << "Change the number of items" <<endl;
+			cout << "Enter the name of the item you want to change: " << endl;
+			string name;
+			cin.ignore();
+			getline(cin, name);
 
+			int quantity;
+			cout << "Enter the new quantity: " <<endl;
+			cin >> quantity;
+			cin.ignore();
+
+			items item;
+			item.setName(name);
+			item.setQuantity(quantity);
+			shoppingcart.modifyItem(item);
+			cout << endl;
+			printMenu();
+		}
+		
+		else if (menu == "4")
+		{
+			cout << endl;
+			cout << "View Shopping Cart" <<endl;
+			shoppingcart.printTotal();
+			cout << endl;
+			printMenu();
+		}
+		
+		else if (menu == "5")
+		{
+			cout << endl;
+			cout << "View Item Descriptions" <<endl;
+			shoppingcart.printDescriptions();
+			cout << endl;
+			printMenu();
+		}
+		else{
+			cout << "Choose an option: " << endl;
 		}
 
-
+	cin>> menu;
 
 	}
 
-
-
-
-
-
-	
 	return 0;
 }
-
